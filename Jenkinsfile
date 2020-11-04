@@ -27,13 +27,6 @@ stage('Test URL') {
         }
     }
 }
-catch (err) {
-    currentBuild.result = "FAILURE"
-    throw err
- }
-
-
-
 }
 }
 }
