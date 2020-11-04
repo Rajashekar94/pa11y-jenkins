@@ -1,9 +1,6 @@
 
 node('server_build_slave') {
-  
   stage('properties') {
-   
-    
     properties([
     parameters([
         string(name: 'SITE_URL', defaultValue: 'http://germaniumhq.com/',
@@ -12,9 +9,7 @@ node('server_build_slave') {
 ])
 
 SITE_URL = params.SITE_URL ?: 'http://germaniumhq.com/'
-  
   }
-  
 stage('Test URL') {
     
         deleteDir()
@@ -24,7 +19,7 @@ stage('Test URL') {
             .inside {
             sh """
                 pa11y -c /pa11y.config.json "${SITE_URL}"
-            """
+            """ 
         }
     
 }
