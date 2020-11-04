@@ -1,6 +1,5 @@
 
-def call(body) {
-    body()
+
 node('server_build_slave') {
 
 
@@ -29,5 +28,5 @@ stage('Test URL') {
 }
 
 }
-}
+
 
