@@ -1,4 +1,11 @@
-properties([
+
+def call(body) {
+    body()
+node('server_build_slave') {
+
+try {
+
+    properties([
     parameters([
         string(name: 'SITE_URL', defaultValue: 'http://germaniumhq.com/',
                 description: 'URL to test the accesibility against')
@@ -19,5 +26,15 @@ stage('Test URL') {
             """
         }
     }
+}
+catch (err) {
+    currentBuild.result = "FAILURE"
+    throw err
+ }
+
+
+
+}
+}
 }
 
