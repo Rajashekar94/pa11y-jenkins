@@ -3,7 +3,7 @@ def call(body) {
     body()
 node('server_build_slave') {
 
-try {
+
 
     properties([
     parameters([
@@ -27,7 +27,7 @@ stage('Test URL') {
         }
     }
 }
-}
+
 }
 }
 
