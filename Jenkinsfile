@@ -11,7 +11,7 @@ node('server_build_slave') {
 SITE_URL = params.SITE_URL ?: 'http://germaniumhq.com/'
   }
 stage('Test URL') {
-    node {
+    
         deleteDir()
         checkout scm
 
@@ -21,7 +21,7 @@ stage('Test URL') {
                 pa11y -c /pa11y.config.json "${SITE_URL}"
             """
         }
-    }
+    
 }
 
 }
